@@ -30,7 +30,7 @@ const TEMPLATE_TOOL_RESPONSE = `TOOL RESPONSE:
 USER'S INPUT
 --------------------
 
-Okay, so what is the response to my last comment? If using information obtained from the tools you must mention it explicitly without mentioning the tool names - I have forgotten all TOOL RESPONSES! Remember to respond with a markdown code snippet of a json blob with a single action, and NOTHING else.`
+Okay, so based on my system message, what should  do next? Remember to respond with a markdown code snippet of a json blob with a single action, and NOTHING else.`
 
 class ConversationalAgent_Agents implements INode {
     label: string

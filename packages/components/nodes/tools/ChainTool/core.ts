@@ -15,7 +15,8 @@ export class ChainTool extends DynamicTool {
             func: async (input, runManager) => {
                 // To enable LLM Chain which has promptValues
                 if ((chain as any).prompt && (chain as any).prompt.promptValues) {
-                    const promptValues = handleEscapeCharacters((chain as any).prompt.promptValues, true)
+                    const promptTemp = handleEscapeCharacters((chain as any).prompt.promptValues, true)
+                    const promptValues = { ...promptTemp, input }
                     const values = await chain.call(promptValues, runManager?.getChild())
                     return values?.text
                 }
